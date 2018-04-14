@@ -50,6 +50,7 @@ iStorage.remove((key: String), (debug: Boolean));
 ## Testing
 
 ```js
+// success
 iStorage.get('testing',true);
 iStorage.check('testing',true);
 iStorage.remove('testing',true);
@@ -74,14 +75,13 @@ iStorage.get('testing',true);
 iStorage.set('testing',{a:1},true);
 iStorage.set('testing',{},true);
 
-error
+// error
 iStorage.set('');
 iStorage.set('testing');
 iStorage.set('testing',true);
 
-
-console.log( iStorage.set('testing',undefined) )
-console.log( iStorage.set('testing',null) )
-console.log( iStorage.set('testing',NaN) )
+iStorage.set('testing',null,true);
+iStorage.set('testing',undefined,true);
+iStorage.set('testing',NaN,true);
 
 ```
