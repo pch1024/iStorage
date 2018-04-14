@@ -1,5 +1,5 @@
-<h1 align="center">localStorage</h1>
-<p align="center">:ghost::ghost::ghost::ghost::ghost:</p>
+<h1 align="center">iStorage</h1>
+<p align="center">:ghost: :anger::ghost::anger::ghost::anger::ghost::anger::ghost:</p>
 
 # iStorage 是什么
 
