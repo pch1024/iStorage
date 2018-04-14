@@ -1,0 +1,24 @@
+{
+  "name": "istorage",
+  "version": "1.0.0",
+  "description": "localStorage 小插件，支持直接存储数字(非NaN)、字符串、数组、JSON类型.",
+  "main": "iStorage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pch1024/iStorage.git"
+  },
+  "keywords": [
+    "localStorage",
+    "iStorage",
+    "javaScript"
+  ],
+  "author": "P.P",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pch1024/iStorage/issues"
+  },
+  "homepage": "https://github.com/pch1024/iStorage#readme"
+}
