@@ -13,7 +13,8 @@ iStorage 是基于原生 JS 实现的，不依赖任何框架。它编译压缩�
 ### npm
 
 ```js
-import iStorage from "iStorage";
+npm i -s istorage
+import iStorage from "istorage";
 ```
 
 ### 其他
