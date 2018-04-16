@@ -67,7 +67,7 @@ iStorage.clearAll(key: String, debug: Boolean);
 
 使用 TypeScript 重构，添加 sessionStorage 和 cookie，并希望支持异步操作.
 
-## 更新日志
+## iStorage 更新日志
 
 ### 0.0.1
 
