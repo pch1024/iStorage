@@ -85,10 +85,8 @@ iStorage.clearAll(key: String, debug: Boolean);
 
 该版本在代码上进行了完善，并提供了更好 debug log 信息。
 
-详见 [redeme@0.0.1](0.0.2/README.md)
+详见 [redeme@0.0.2](0.0.2/README.md)
 
 ### 0.0.3
 
 此版本改动较大，涉及方法名称的语义化，新方法的添加，check方法废弃，新增本地 Webpack 调试代码，debug log 信息进一步优化。
-
-详见 [redeme@0.0.3](0.0.3/README.md)
