@@ -1,24 +1,43 @@
 {
   "name": "istorage",
-  "version": "0.0.2",
-  "description": "localStorage 小插件，支持直接存储数字(非NaN)、字符串、数组、JSON类型.",
   "main": "iStorage.min.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "filename": "iStorage.min.js",
+  "version": "0.0.3",
+  "description": "Local Storage 小插件，支持直接存储和获取数字(非NaN)、字符串、数组、JSON类型.",
+  "keywords": [
+    "localStorage",
+    "Local Storage",
+    "iStorage",
+    "javaScript"
+  ],
+  "maintainers": [
+    {
+      "name": "philip.pei",
+      "web": "peichenhu.cn",
+      "mail": "pch1024@outlook.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pch1024/iStorage.git"
   },
-  "keywords": [
-    "localStorage",
-    "iStorage",
-    "javaScript"
-  ],
+  "scripts": {
+    "test": "webpack-dev-server --mode=development --color --open",
+    "build": "webpack --mode=production"
+  },
   "author": "philip.pei",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pch1024/iStorage/issues"
   },
-  "homepage": "https://github.com/pch1024/iStorage#readme"
+  "homepage": "https://github.com/pch1024/iStorage#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "uglify-js": "^3.3.21",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
 }

@@ -58,29 +58,19 @@
   };
 
   /**
-   * 获取 Local Storage Length
+   * 键名检查
+   * @param {String} key
    * @param {Boolean} debug
    */
-  IStorage.prototype.getLength = function(debug) {
-    if (debug) console.log("Local Storage length is ", localStorage.length);
-    return localStorage.length;
-  };
-
-  /**
-   * 根据 Local Storage 的长度（length）作为索引值，来获取键名
-   * @param {Number} index 
-   * @param {Boolean} debug 
-   */
-  IStorage.prototype.getIndex = function(index, debug) {
-    if (
-      Object.prototype.toString.call(index) === "[object Number]" &&
-      !isNaN(index)
-    ) {
-      if (debug) console.log("index: ",index,'is', localStorage.key(index));
-      return localStorage.key(index);
-    } else {
-      console.log("Key must number!");
+  IStorage.prototype.check = function(key, debug) {
+    if (debug) {
+      if (localStorage.getItem(key)) {
+        console.log("check success: " + key + localStorage.getItem(key));
+      } else {
+        console.log("check failure: not find " + key);
+      }
     }
+    return localStorage.getItem(key) ? true : false;
   };
 
   /**
@@ -88,12 +78,12 @@
    * @param {String} key
    * @param {Boolean} debug
    */
-  IStorage.prototype.getItem = function(key, debug) {
-    if (!localStorage.getItem(key)) {
-      if (debug) console.log("get failure:", key);
+  IStorage.prototype.get = function(key, debug) {
+    if (!this.check(key)) {
+      if (debug) console.log("get failure:" + key);
       return localStorage.getItem(key);
     } else {
-      if (debug) console.log("get success: ", key, JSON.parse(localStorage.getItem(key)).iStorage);
+      if (debug) console.log("get success:" + key + localStorage.getItem(key));
       return JSON.parse(localStorage.getItem(key)).iStorage;
     }
   };
@@ -104,11 +94,11 @@
    * @param {!NaN||Number||String||Array||JSON} value
    * @param {Boolean} debug
    */
-  IStorage.prototype.setItem = function(key, value, debug) {
+  IStorage.prototype.set = function(key, value, debug) {
     value = this.handlerValue(value);
     localStorage.setItem(key, value);
-    if (debug) console.log("set success: ", key, value);
-    return this.getItem(key);
+    if (debug) console.log("set success: " + key + value);
+    return this.get(key);
   };
 
   /**
@@ -116,24 +106,16 @@
    * @param {String} key
    * @param {Boolean} debug
    */
-  IStorage.prototype.removeItem = function(key, debug) {
-    if (debug && localStorage.getItem(key)) {
-      console.log("remove success: ", key, this.getItem(key));
+  IStorage.prototype.remove = function(key, debug) {
+    if (debug && this.check(key)) {
+      console.log("remove success: " + key + this.get(key));
     } else {
-      console.log("remove failure: not find ", key);
+      console.log("remove failure: not find " + key);
     }
     localStorage.removeItem(key);
-    return this.getItem(key);
-  };
-  
-  /**
-   * 清楚该域的所有Local Storage 记录
-   * @param {Boolean} debug
-   */
-  IStorage.prototype.clearAll = function(debug) {
-    if (debug) console.log("Clear done !");
-    localStorage.clear();
+    return this.get(key);
   };
 
-  return new IStorage();
+  var iStorage = new IStorage();
+  return iStorage;
 });
