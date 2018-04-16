@@ -7,7 +7,7 @@
 
 `iStorage`是针对浏览器 `Local Storage` 的一个便捷操作插件。它支持用户直接`存储`和`获取`数字(非 NaN)、字符串、数组、JSON 类型数据。
 
-`iStorage` 是基于原生 JavaScript 实现的，它编译压缩后仅 1.5kb 左右，请放心试用。也是作者的第一个 NPM 插件，不足之处还请见谅和指正。
+`iStorage` 是基于原生 JavaScript 实现的，它编译压缩后仅 2kb 左右，请放心试用。也是作者的第一个 NPM 插件，不足之处还请见谅和指正。
 
 ## iStorage 安装
 
@@ -61,7 +61,6 @@ iStorage.clearAll(key: String, debug: Boolean);
 // 若要修改插件,比如 0.0.3 版，请参考以下指令
 // 修改未压缩版本 iStorage.js, 修改完后，使用 uglify-js 压缩
 > uglifyjs iStorage.js  -m -c -o iStorage.min.js
-
 ```
 
 ## iStorage 未来
@@ -72,12 +71,12 @@ iStorage.clearAll(key: String, debug: Boolean);
 
 ### 0.0.1
 
-第一版代码比较粗糙，仅用于验证代码结构和方法的设计、插件的实际用途。基本实现了数字、字符串、数组、JSON对象四种基本数据的类型检测，直接存储和获取;方法上实现了:
+第一版代码比较粗糙，仅用于验证代码结构和方法的设计、插件的实际用途。基本实现了数字、字符串、数组、JSON 对象四种基本数据的类型检测，直接存储和获取;方法上实现了:
 
-- check: 检查某个键名是否存在
-- get：获取某个键名的值
-- set：设置键值对
-- remove：根据键名删除某个键值对
+* check: 检查某个键名是否存在
+* get：获取某个键名的值
+* set：设置键值对
+* remove：根据键名删除某个键值对
 
 详见 [redeme@0.0.1](0.0.1/README.md)
 
@@ -89,4 +88,4 @@ iStorage.clearAll(key: String, debug: Boolean);
 
 ### 0.0.3
 
-此版本改动较大，涉及方法名称的语义化，新方法的添加，check方法废弃，新增本地 Webpack 调试代码，debug log 信息进一步优化。
+此版本改动较大，涉及方法名称的语义化，新方法的添加，check 方法废弃，新增本地 Webpack 调试代码，debug log 信息进一步优化。
